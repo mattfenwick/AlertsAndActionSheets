@@ -11,8 +11,9 @@
 @interface FirstViewController () <UIAlertViewDelegate, UIActionSheetDelegate>
 
 @property (nonatomic, weak) IBOutlet UITabBarItem *myTabBarItem;
-
+@property (nonatomic, weak) IBOutlet UIButton *actionSheet;
 @property (nonatomic, weak) IBOutlet UIButton *alertControllerActionSheetSource;
+@property (nonatomic) NSInteger count;
 
 @end
 
@@ -39,8 +40,23 @@
 {
     NSLog(@"actionsheet");
     UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"The title" delegate:self cancelButtonTitle:@"Cancel this" destructiveButtonTitle:@"Destructive button1" otherButtonTitles:@"D-button 2", @"D-button 3", nil];
-//    [sheet showInView:self.view];
-    [sheet showFromBarButtonItem:self.myTabBarItem animated:YES];
+    switch (_count % 4)
+    {
+        // rotate among the various display possibilities
+        case 0:
+            [sheet showInView:self.view];
+            break;
+        case 1:
+            [sheet showFromBarButtonItem:self.myTabBarItem animated:YES];
+            break;
+        case 2:
+            [sheet showFromTabBar:self.myTabBar];
+            break;
+        default:
+            [sheet showFromRect:self.actionSheet.bounds inView:self.actionSheet animated:YES];
+    }
+    _count++;
+//    [sheet showFromToolbar:toolBar]; // not sure how to do this one
 }
 
 - (IBAction)tapAlertControllerAlert:(id)sender
@@ -71,9 +87,16 @@
     [alert addAction:[UIAlertAction actionWithTitle:@"Destructive 1" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
         NSLog(@"Destructive 1");
     }]];
-    [alert addAction:[UIAlertAction actionWithTitle:@"Cancel 1" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-        NSLog(@"Cacnel 1");
+    [alert addAction:[UIAlertAction actionWithTitle:@"Destructive 2" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+        NSLog(@"Destructive 2");
     }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"Cancel 1" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        NSLog(@"Cancel 1");
+    }]];
+    // NOPE - 'UIAlertController can only have one action with a style of UIAlertActionStyleCancel'
+//    [alert addAction:[UIAlertAction actionWithTitle:@"Cancel 2" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+//        NSLog(@"Cancel 2");
+//    }]];
     UIPopoverPresentationController *popover = alert.popoverPresentationController;
     // I hope this is okay to do
     popover.barButtonItem = self.myTabBarItem;
@@ -92,9 +115,15 @@
     [alert addAction:[UIAlertAction actionWithTitle:@"Destructive 1" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
         NSLog(@"Destructive 1");
     }]];
-    [alert addAction:[UIAlertAction actionWithTitle:@"Cancel 1" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-        NSLog(@"Cacnel 1");
+    [alert addAction:[UIAlertAction actionWithTitle:@"Destructive 2" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+        NSLog(@"Destructive 2");
     }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"Cancel 1" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        NSLog(@"Cancel 1");
+    }]];
+//    [alert addAction:[UIAlertAction actionWithTitle:@"Cancel 2" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+//        NSLog(@"Cancel 2");
+//    }]];
     UIPopoverPresentationController *popover = alert.popoverPresentationController;
 //    popover.sourceView = self.view;
     // TODO should I use something different?

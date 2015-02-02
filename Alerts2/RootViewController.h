@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  RootViewController.h
 //  Alerts2
 //
 //  Created by MattF on 2/2/15.
@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
-
-@property (nonatomic, weak) IBOutlet UITabBar *myTabBar;
+@interface RootViewController : UITabBarController
 
 @end
-

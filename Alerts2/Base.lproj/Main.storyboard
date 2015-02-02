@@ -69,8 +69,8 @@
                                     <action selector="tapAlertControllerActionSheetSourceView:" destination="9pv-A4-QxB" eventType="touchUpInside" id="bBa-pB-u1Z"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1V-Z2-Oo9">
-                                <rect key="frame" x="195" y="70" width="200" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1V-Z2-Oo9">
+                                <rect key="frame" x="200" y="70" width="200" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.28504548280000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="wq8-1y-oNg"/>
@@ -101,6 +101,7 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="actionSheet" destination="fnS-hX-jWB" id="HOj-G2-F1T"/>
                         <outlet property="alertControllerActionSheetSource" destination="b4D-6K-TlK" id="eA3-v1-Ru9"/>
                         <outlet property="myTabBarItem" destination="acW-dT-cKf" id="zB3-jE-eMJ"/>
                     </connections>
@@ -155,10 +156,10 @@
             </objects>
             <point key="canvasLocation" x="750" y="360"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Root View Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" customClass="RootViewController" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -166,6 +167,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <outlet property="myTabBar" destination="W28-zg-YXA" id="wy9-wN-yF4"/>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="Cy0-6U-WUp" kind="relationship" relationship="viewControllers" id="shl-pF-FTq"/>
