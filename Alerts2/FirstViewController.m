@@ -24,4 +24,29 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)tapAlertView:(id)sender
+{
+    NSLog(@"alertview");
+}
+
+- (IBAction)tapActionSheet:(id)sender
+{
+    NSLog(@"actionsheet");
+}
+
+- (IBAction)tapAlertControllerAlert:(id)sender
+{
+    NSLog(@"alertcontroller alert");
+}
+
+- (IBAction)tapAlertControllerActionSheetBarButton:(id)sender
+{
+    NSLog(@"alertcontroller actionsheet barbutton");
+}
+
+- (IBAction)tapAlertControllerActionSheetSourceView:(id)sender
+{
+    NSLog(@"alertcontroller actionsheet sourceview");
+}
+
 @end

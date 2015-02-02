@@ -15,6 +15,7 @@
 		99B26DC01A7FCABA00174930 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99B26DBF1A7FCABA00174930 /* Images.xcassets */; };
 		99B26DC31A7FCABA00174930 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99B26DC11A7FCABA00174930 /* LaunchScreen.xib */; };
 		99B26DCF1A7FCABA00174930 /* Alerts2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 99B26DCE1A7FCABA00174930 /* Alerts2Tests.m */; };
+		99B26DDA1A7FCE5000174930 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99B26DD91A7FCE5000174930 /* ThirdViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		99B26DC81A7FCABA00174930 /* Alerts2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Alerts2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		99B26DCD1A7FCABA00174930 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99B26DCE1A7FCABA00174930 /* Alerts2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Alerts2Tests.m; sourceTree = "<group>"; };
+		99B26DD81A7FCE5000174930 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		99B26DD91A7FCE5000174930 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +97,8 @@
 				99B26DBF1A7FCABA00174930 /* Images.xcassets */,
 				99B26DC11A7FCABA00174930 /* LaunchScreen.xib */,
 				99B26DAF1A7FCABA00174930 /* Supporting Files */,
+				99B26DD81A7FCE5000174930 /* ThirdViewController.h */,
+				99B26DD91A7FCE5000174930 /* ThirdViewController.m */,
 			);
 			path = Alerts2;
 			sourceTree = "<group>";
@@ -225,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				99B26DBB1A7FCABA00174930 /* SecondViewController.m in Sources */,
+				99B26DDA1A7FCE5000174930 /* ThirdViewController.m in Sources */,
 				99B26DB51A7FCABA00174930 /* AppDelegate.m in Sources */,
 				99B26DB81A7FCABA00174930 /* FirstViewController.m in Sources */,
 				99B26DB21A7FCABA00174930 /* main.m in Sources */,
