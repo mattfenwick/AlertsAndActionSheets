@@ -8,7 +8,11 @@
 
 #import "FirstViewController.h"
 
-@interface FirstViewController ()
+@interface FirstViewController () <UIAlertViewDelegate, UIActionSheetDelegate>
+
+@property (nonatomic, weak) IBOutlet UITabBarItem *myTabBarItem;
+
+@property (nonatomic, weak) IBOutlet UIButton *alertControllerActionSheetSource;
 
 @end
 
@@ -27,26 +31,129 @@
 - (IBAction)tapAlertView:(id)sender
 {
     NSLog(@"alertview");
+    UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"The title" message:@"And the message" delegate:self cancelButtonTitle:@"Cancel this" otherButtonTitles:@"Button1", @"Button2", nil];
+    [view show];
 }
 
 - (IBAction)tapActionSheet:(id)sender
 {
     NSLog(@"actionsheet");
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"The title" delegate:self cancelButtonTitle:@"Cancel this" destructiveButtonTitle:@"Destructive button1" otherButtonTitles:@"D-button 2", @"D-button 3", nil];
+//    [sheet showInView:self.view];
+    [sheet showFromBarButtonItem:self.myTabBarItem animated:YES];
 }
 
 - (IBAction)tapAlertControllerAlert:(id)sender
 {
     NSLog(@"alertcontroller alert");
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"This is the title" message:@"Here's the message" preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"Action 1" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        NSLog(@"action1");
+    }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"Destructive 1" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+        NSLog(@"Destructive 1");
+    }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"Cancel 1" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        NSLog(@"Cacnel 1");
+    }]];
+    [self presentViewController:alert animated:YES completion:^() {
+        NSLog(@"done with alertcontroller");
+    }];
 }
 
 - (IBAction)tapAlertControllerActionSheetBarButton:(id)sender
 {
     NSLog(@"alertcontroller actionsheet barbutton");
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"This is the title" message:@"Here's the message" preferredStyle:UIAlertControllerStyleActionSheet];
+    [alert addAction:[UIAlertAction actionWithTitle:@"Action 1" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        NSLog(@"action1");
+    }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"Destructive 1" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+        NSLog(@"Destructive 1");
+    }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"Cancel 1" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        NSLog(@"Cacnel 1");
+    }]];
+    UIPopoverPresentationController *popover = alert.popoverPresentationController;
+    // I hope this is okay to do
+    popover.barButtonItem = self.myTabBarItem;
+    [self presentViewController:alert animated:YES completion:^() {
+        NSLog(@"done with alertcontroller");
+    }];
 }
 
 - (IBAction)tapAlertControllerActionSheetSourceView:(id)sender
 {
     NSLog(@"alertcontroller actionsheet sourceview");
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"This is the title" message:@"Here's the message" preferredStyle:UIAlertControllerStyleActionSheet];
+    [alert addAction:[UIAlertAction actionWithTitle:@"Action 1" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        NSLog(@"action1");
+    }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"Destructive 1" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+        NSLog(@"Destructive 1");
+    }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"Cancel 1" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        NSLog(@"Cacnel 1");
+    }]];
+    UIPopoverPresentationController *popover = alert.popoverPresentationController;
+//    popover.sourceView = self.view;
+    // TODO should I use something different?
+//    popover.sourceRect = self.view.bounds;
+//    [self.alertControllerActionSheetSource ]
+//    popover.sourceRect = self.alertControllerActionSheetSource.bounds;
+//    popover.sourceView = self.alertControllerActionSheetSource.viewForBaselineLayout;
+    popover.sourceView = self.alertControllerActionSheetSource;
+    popover.sourceRect = self.alertControllerActionSheetSource.bounds;
+//    popover.sourceRect = [sender bounds];
+    [self presentViewController:alert animated:YES completion:^() {
+        NSLog(@"done with alertcontroller");
+    }];
+}
+
+
+#pragma mark - UIAlertView delegate
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    NSLog(@"alertView didDismiss");
+}
+
+- (void)alertView:(UIAlertView *)alertView willDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    NSLog(@"alertView willDismiss");
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSLog(@"alertView clickedButton");
+}
+
+- (void)alertViewCancel:(UIAlertView *)alertView
+{
+    NSLog(@"alertView cancel");
+}
+
+
+#pragma mark - UIActionSheet delegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSLog(@"actionSheet clickedButton");
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet willDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    NSLog(@"actionSheet willDismiss");
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    NSLog(@"actionSheet didDismiss");
+}
+
+- (void)actionSheetCancel:(UIActionSheet *)actionSheet
+{
+    NSLog(@"actionSheet cancel");
 }
 
 @end
