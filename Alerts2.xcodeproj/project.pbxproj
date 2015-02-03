@@ -16,6 +16,8 @@
 		99B26DC31A7FCABA00174930 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99B26DC11A7FCABA00174930 /* LaunchScreen.xib */; };
 		99B26DCF1A7FCABA00174930 /* Alerts2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 99B26DCE1A7FCABA00174930 /* Alerts2Tests.m */; };
 		99B26DDA1A7FCE5000174930 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99B26DD91A7FCE5000174930 /* ThirdViewController.m */; };
+		99B797CC1A810E0B00AFBE5C /* UBSActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 99B797C91A810E0B00AFBE5C /* UBSActionSheet.m */; };
+		99B797CD1A810E0B00AFBE5C /* UBSAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 99B797CB1A810E0B00AFBE5C /* UBSAlert.m */; };
 		99C4AAE31A8012FD004B905A /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99C4AAE21A8012FD004B905A /* RootViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +49,10 @@
 		99B26DCE1A7FCABA00174930 /* Alerts2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Alerts2Tests.m; sourceTree = "<group>"; };
 		99B26DD81A7FCE5000174930 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
 		99B26DD91A7FCE5000174930 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
+		99B797C81A810E0B00AFBE5C /* UBSActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBSActionSheet.h; sourceTree = "<group>"; };
+		99B797C91A810E0B00AFBE5C /* UBSActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBSActionSheet.m; sourceTree = "<group>"; };
+		99B797CA1A810E0B00AFBE5C /* UBSAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBSAlert.h; sourceTree = "<group>"; };
+		99B797CB1A810E0B00AFBE5C /* UBSAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBSAlert.m; sourceTree = "<group>"; };
 		99C4AAE11A8012FD004B905A /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		99C4AAE21A8012FD004B905A /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,6 +96,10 @@
 		99B26DAE1A7FCABA00174930 /* Alerts2 */ = {
 			isa = PBXGroup;
 			children = (
+				99B797C81A810E0B00AFBE5C /* UBSActionSheet.h */,
+				99B797C91A810E0B00AFBE5C /* UBSActionSheet.m */,
+				99B797CA1A810E0B00AFBE5C /* UBSAlert.h */,
+				99B797CB1A810E0B00AFBE5C /* UBSAlert.m */,
 				99C4AAE11A8012FD004B905A /* RootViewController.h */,
 				99C4AAE21A8012FD004B905A /* RootViewController.m */,
 				99B26DB31A7FCABA00174930 /* AppDelegate.h */,
@@ -238,7 +248,9 @@
 				99B26DDA1A7FCE5000174930 /* ThirdViewController.m in Sources */,
 				99C4AAE31A8012FD004B905A /* RootViewController.m in Sources */,
 				99B26DB51A7FCABA00174930 /* AppDelegate.m in Sources */,
+				99B797CC1A810E0B00AFBE5C /* UBSActionSheet.m in Sources */,
 				99B26DB81A7FCABA00174930 /* FirstViewController.m in Sources */,
+				99B797CD1A810E0B00AFBE5C /* UBSAlert.m in Sources */,
 				99B26DB21A7FCABA00174930 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
