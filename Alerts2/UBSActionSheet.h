@@ -2,8 +2,6 @@
 #import <Foundation/Foundation.h>
 
 
-// does it matter, which view you use to display a UIActionSheet on an iphone?  (guess: no)
-
 typedef NS_ENUM(NSInteger, UBSActionSheetActionStyle)
 {
     UBSActionSheetActionStyleDefault,

@@ -5,6 +5,7 @@
 
 @property (nonatomic) BOOL isIOS8;
 @property (nonatomic, strong) NSMutableArray *handlers;
+@property (nonatomic, strong) id keepInMemory;
 
 @end
 
@@ -25,6 +26,7 @@
         {
             self.actionSheet = [[UIActionSheet alloc] initWithTitle:title delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
             self.handlers = [NSMutableArray array];
+            self.keepInMemory = self;
         }
     }
     return self;
@@ -100,6 +102,7 @@
         void (^handler)() = self.handlers[buttonIndex];
         handler();
     }
+    self.keepInMemory = nil;
 }
 
 

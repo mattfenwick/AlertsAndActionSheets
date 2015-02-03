@@ -13,12 +13,28 @@
 @implementation UBSAlert
 
 // can you do destructive buttons with UIAlertView?
-// can you do multiple destructive buttons with UIAlertController?
-// you can only do one cancel button, right?  (in both UIAlertView and UIAlertController)
-//   - UIAlertController -- can only have 1
+//   - no
+// how many destructive buttons can you have?
+//   - UIActionSheet: 0
+//   - UIAlertController: 0 or more
+//   - UIActionSheet: 0 or 1
+// how many cancel buttons can you have?
+//   - UIAlertController, UIAlertView, UIActionSheet - just 1
 // can the cancel button go before other buttons?
+//   - ?
 // does the cancel button show up on ipad?
+//   - for UIAlertController (style -- action sheet) and UIActionSheet, no
 // on iOS8 iPhone, if there's no cancel button, it looks like you can't get out of the modal box
+//   - ?
+// does it matter, which view you use to display a UIActionSheet on an iphone?
+//   - guess: no -- what does seem to matter, is that the view you choose is part of the appropriate window
+// is keepInMemory cleanup happening correctly?
+//   - UIAlertView, UIActionSheet, UIAlertController?
+//   - iPhone, iPad?
+//   - looks like we don't need to use keepInMemory for UIAlertController
+// are we checking for nil handlers and deal with them safely?
+//   - ?
+
 - (instancetype)initWithTitle:(NSString *)title message:(NSString *)message
 {
     self = [super init];
