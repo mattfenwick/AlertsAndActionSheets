@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnS-hX-jWB">
-                                <rect key="frame" x="200" y="150" width="200" height="30"/>
+                                <rect key="frame" x="200" y="110" width="200" height="30"/>
                                 <color key="backgroundColor" red="0.1436146962" green="1" blue="0.14654225800000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="obs-8S-Yim"/>
@@ -31,7 +31,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wiS-IC-byk">
-                                <rect key="frame" x="200" y="230" width="200" height="30"/>
+                                <rect key="frame" x="200" y="170" width="200" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.87139605221912309" blue="0.085676764456928289" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="1ie-Qj-sYJ"/>
@@ -44,7 +44,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kGw-in-ggt">
-                                <rect key="frame" x="100" y="310" width="400" height="30"/>
+                                <rect key="frame" x="100" y="230" width="400" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.10309925328562386" blue="0.94801954242832409" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="400" id="zK9-ct-NBf"/>
@@ -57,7 +57,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4D-6K-TlK">
-                                <rect key="frame" x="100" y="390" width="400" height="30"/>
+                                <rect key="frame" x="100" y="290" width="400" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.33961783335078854" blue="0.00083137051921799987" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="400" id="Cf5-u7-nXM"/>
@@ -70,7 +70,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1V-Z2-Oo9">
-                                <rect key="frame" x="200" y="70" width="200" height="30"/>
+                                <rect key="frame" x="200" y="50" width="200" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.28504548280000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="wq8-1y-oNg"/>
@@ -82,16 +82,46 @@
                                     <action selector="tapAlertView:" destination="9pv-A4-QxB" eventType="touchUpInside" id="x7H-td-pdQ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GMW-20-A3q">
+                                <rect key="frame" x="200" y="350" width="200" height="30"/>
+                                <color key="backgroundColor" red="0.02262976098952052" green="0.99312852796146101" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="2Md-QL-EVx"/>
+                                </constraints>
+                                <state key="normal" title="UBSAlert">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapUBSAlert:" destination="9pv-A4-QxB" eventType="touchUpInside" id="EsH-P0-XC1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMJ-5D-SrE">
+                                <rect key="frame" x="200" y="410" width="200" height="30"/>
+                                <color key="backgroundColor" red="0.18878355483941367" green="1" blue="0.64971874698899246" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="uqk-o6-iGG"/>
+                                </constraints>
+                                <state key="normal" title="UBSActionSheet">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapUBSActionSheet:" destination="9pv-A4-QxB" eventType="touchUpInside" id="w3F-vw-H4M"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="b4D-6K-TlK" firstAttribute="top" secondItem="kGw-in-ggt" secondAttribute="bottom" constant="50" id="058-df-P93"/>
+                            <constraint firstItem="b4D-6K-TlK" firstAttribute="top" secondItem="kGw-in-ggt" secondAttribute="bottom" constant="30" id="058-df-P93"/>
                             <constraint firstAttribute="centerX" secondItem="kGw-in-ggt" secondAttribute="centerX" id="1JK-3F-0MA"/>
-                            <constraint firstItem="kGw-in-ggt" firstAttribute="top" secondItem="wiS-IC-byk" secondAttribute="bottom" constant="50" id="TO0-C2-96z"/>
-                            <constraint firstItem="z1V-Z2-Oo9" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="50" id="f5P-td-WIN"/>
+                            <constraint firstAttribute="centerX" secondItem="jMJ-5D-SrE" secondAttribute="centerX" id="49N-HG-YO4"/>
+                            <constraint firstItem="jMJ-5D-SrE" firstAttribute="top" secondItem="GMW-20-A3q" secondAttribute="bottom" constant="30" id="O36-Ef-hVw"/>
+                            <constraint firstItem="kGw-in-ggt" firstAttribute="top" secondItem="wiS-IC-byk" secondAttribute="bottom" constant="30" id="TO0-C2-96z"/>
+                            <constraint firstAttribute="centerX" secondItem="GMW-20-A3q" secondAttribute="centerX" id="d7c-8H-8kj"/>
+                            <constraint firstItem="z1V-Z2-Oo9" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="30" id="f5P-td-WIN"/>
                             <constraint firstItem="z1V-Z2-Oo9" firstAttribute="centerX" secondItem="fnS-hX-jWB" secondAttribute="centerX" id="mmj-JG-lNq"/>
-                            <constraint firstItem="wiS-IC-byk" firstAttribute="top" secondItem="fnS-hX-jWB" secondAttribute="bottom" constant="50" id="qgO-d3-q2k"/>
-                            <constraint firstItem="fnS-hX-jWB" firstAttribute="top" secondItem="z1V-Z2-Oo9" secondAttribute="bottom" constant="50" id="qnZ-38-phs"/>
+                            <constraint firstItem="GMW-20-A3q" firstAttribute="top" secondItem="b4D-6K-TlK" secondAttribute="bottom" constant="30" id="nC4-M1-TeE"/>
+                            <constraint firstItem="wiS-IC-byk" firstAttribute="top" secondItem="fnS-hX-jWB" secondAttribute="bottom" constant="30" id="qgO-d3-q2k"/>
+                            <constraint firstItem="fnS-hX-jWB" firstAttribute="top" secondItem="z1V-Z2-Oo9" secondAttribute="bottom" constant="30" id="qnZ-38-phs"/>
                             <constraint firstAttribute="centerX" secondItem="wiS-IC-byk" secondAttribute="centerX" id="rPT-Xs-gVT"/>
                             <constraint firstAttribute="centerX" secondItem="b4D-6K-TlK" secondAttribute="centerX" id="uAA-vy-BM2"/>
                             <constraint firstAttribute="centerX" secondItem="z1V-Z2-Oo9" secondAttribute="centerX" id="wVI-uQ-H2s"/>
@@ -104,6 +134,8 @@
                         <outlet property="actionSheet" destination="fnS-hX-jWB" id="HOj-G2-F1T"/>
                         <outlet property="alertControllerActionSheetSource" destination="b4D-6K-TlK" id="eA3-v1-Ru9"/>
                         <outlet property="myTabBarItem" destination="acW-dT-cKf" id="zB3-jE-eMJ"/>
+                        <outlet property="ubsActionSheet" destination="jMJ-5D-SrE" id="iZq-P8-fPK"/>
+                        <outlet property="ubsAlert" destination="GMW-20-A3q" id="wrd-Jf-Vda"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>

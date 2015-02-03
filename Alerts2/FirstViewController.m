@@ -7,6 +7,9 @@
 //
 
 #import "FirstViewController.h"
+#import "UBSActionSheet.h"
+#import "UBSAlert.h"
+
 
 @interface FirstViewController () <UIAlertViewDelegate, UIActionSheetDelegate>
 
@@ -14,6 +17,9 @@
 @property (nonatomic, weak) IBOutlet UIButton *actionSheet;
 @property (nonatomic, weak) IBOutlet UIButton *alertControllerActionSheetSource;
 @property (nonatomic) NSInteger count;
+
+@property (nonatomic, weak) IBOutlet UIButton *ubsAlert;
+@property (nonatomic, weak) IBOutlet UIButton *ubsActionSheet;
 
 @end
 
@@ -137,6 +143,33 @@
     [self presentViewController:alert animated:YES completion:^() {
         NSLog(@"done with alertcontroller");
     }];
+}
+
+- (IBAction)tapUBSAlert:(id)sender
+{
+    NSLog(@"UBSAlert");
+    UBSAlert *alert = [[UBSAlert alloc] initWithTitle:@"My title" message:@"And my message"];
+    [alert addButtonWithTitle:@"Normal button 1" style:UBSAlertActionStyleDefault handler:^() {
+        NSLog(@"UBSAlert -- normal button 1");
+    }];
+    [alert addButtonWithTitle:@"Destroy 1" style:UBSAlertActionStyleDestructive handler:^() {
+        NSLog(@"UBSAlert -- destroy 1");
+    }];
+    [alert addButtonWithTitle:@"Destroy 2" style:UBSAlertActionStyleDestructive handler:^() {
+        NSLog(@"UBSAlert -- destroy 2");
+    }];
+    [alert addButtonWithTitle:@"Cancel 1" style:UBSAlertActionStyleCancel handler:^() {
+        NSLog(@"UBSAlert -- cancel 1");
+    }];
+/*    [alert addButtonWithTitle:@"Cancel 2" style:UBSAlertActionStyleCancel handler:^() {
+        NSLog(@"UBSAlert -- cancel 2");
+    }];*/
+    [alert show:self animated:YES];
+}
+
+- (IBAction)tapUBSActionSheet:(id)sender
+{
+    NSLog(@"UBSActionSheet");
 }
 
 
