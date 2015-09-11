@@ -59,18 +59,42 @@
 
 - (void)showFromBarButtonItem:(UIBarButtonItem *)item animated:(BOOL)animated viewController:(UIViewController *)viewController
 {
-    if (self.isIOS8)
+    UIView *view = [item valueForKey:@"view"];
+    if (view)
     {
-        UIPopoverPresentationController *popover = self.alertController.popoverPresentationController;
-        if (popover)
+        if (self.isIOS8)
         {
-            popover.barButtonItem = item;
+            UIPopoverPresentationController *popover = self.alertController.popoverPresentationController;
+            if (popover)
+            {
+                popover.sourceView = view;
+                popover.sourceRect = view.bounds;
+            }
+            [viewController presentViewController:self.alertController animated:animated completion:nil];
         }
-        [viewController presentViewController:self.alertController animated:animated completion:nil];
+        else
+        {
+            [self.actionSheet showFromRect:view.bounds inView:view animated:animated];
+        }
     }
     else
-    {
-        [self.actionSheet showFromBarButtonItem:item animated:animated];
+    { // we don't expect this to happen -- but just in case
+        if (self.isIOS8)
+        {
+            UIPopoverPresentationController *popover = self.alertController.popoverPresentationController;
+            if (popover)
+            {
+                popover.barButtonItem = item;
+            }
+            [viewController presentViewController:self.alertController animated:animated completion:nil];
+        }
+        else
+        {
+            // we don't showFromBarButtonItem because that allows barButtonItems to be tapped
+            //   while actionsheet is open; this could result in multiple actionsheets
+            //   displayed on top of each other
+            [self.actionSheet showInView:[UIApplication sharedApplication].keyWindow];
+        }
     }
 }
 

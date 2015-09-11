@@ -189,6 +189,27 @@
     [actionSheet showFromRect:self.ubsActionSheet.bounds inView:self.ubsActionSheet animated:YES viewController:self];
 }
 
+- (IBAction)tapUBSActionSheetBarButtonItem:(id)sender
+{
+    NSLog(@"UBSActionSheet - barButtonItem");
+    UBSActionSheet *actionSheet = [[UBSActionSheet alloc] initWithTitle:@"My title" message:@"And my message"];
+    [actionSheet addButtonWithTitle:@"Normal button 1" style:UBSActionSheetActionStyleDefault handler:^() {
+        NSLog(@"UBSActionSheet -- normal button 1");
+    }];
+    [actionSheet addButtonWithTitle:@"Destroy 1" style:UBSActionSheetActionStyleDestructive handler:^() {
+        NSLog(@"UBSActionSheet -- destroy 1");
+    }];
+    [actionSheet addButtonWithTitle:@"Destroy 2" style:UBSActionSheetActionStyleDestructive handler:^() {
+        NSLog(@"UBSActionSheet -- destroy 2");
+    }];
+    [actionSheet addButtonWithTitle:@"Cancel 1" style:UBSActionSheetActionStyleCancel handler:^() {
+        NSLog(@"UBSActionSheet -- cancel 1");
+    }];
+    /*    [alert addButtonWithTitle:@"Cancel 2" style:UBSAlertActionStyleCancel handler:^() {
+     NSLog(@"UBSAlert -- cancel 2");
+     }];*/
+    [actionSheet showFromBarButtonItem:self.myTabBarItem animated:YES viewController:self];
+}
 
 #pragma mark - UIAlertView delegate
 
